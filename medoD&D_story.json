@@ -1,0 +1,279 @@
+{
+  "classes": {
+    "Warrior": {
+      "description": "محارب شجاع ذو قوة لا مثيل لها.",
+      "starting_story": "warrior_story_1"
+    },
+    "Mage": {
+      "description": "ساحر ماهر في فنون السحر القديم.",
+      "starting_story": "mage_story_1"
+    },
+    "Rogue": {
+      "description": "لص بارع يتمتع بالدهاء والسرعة.",
+      "starting_story": "rogue_story_1"
+    }
+  },
+  "stories": {
+    "warrior_story_1": {
+      "title": "مغامرة المحارب في أرض الظلال",
+      "description": "أنت محارب بدأ رحلتك في أرض الظلال، تبحث عن المغامرات والشرف.",
+      "events": ["warrior_event_1", "warrior_event_2"]
+    },
+    "mage_story_1": {
+      "title": "مغامرة الساحر في مملكة الأرواح",
+      "description": "أنت ساحر بدأ رحلتك في مملكة الأرواح، تبحث عن المعرفة والقوة.",
+      "events": ["mage_event_1", "mage_event_2"]
+    },
+    "rogue_story_1": {
+      "title": "مغامرة اللص في مدينة الأحلام",
+      "description": "أنت لص بدأ رحلتك في مدينة الأحلام، تبحث عن الثروات والمغامرات.",
+      "events": ["rogue_event_1", "rogue_event_2"]
+    }
+  },
+  "events": {
+    "warrior_event_1": {
+      "description": "تواجه وحشًا ضخمًا في الطريق. ماذا تفعل؟",
+      "choices": {
+        "1": {
+          "text": "مهاجمة الوحش بشراسة.",
+          "next_event": "warrior_event_3",
+          "consequence": {
+            "hp_change": -20,
+            "xp_change": 100
+          }
+        },
+        "2": {
+          "text": "تجاهل الوحش والمرور.",
+          "next_event": "warrior_event_4",
+          "consequence": {
+            "xp_change": 50
+          }
+        }
+      }
+    },
+    "warrior_event_2": {
+      "description": "تعثر على كنز مخفي. ماذا تفعل؟",
+      "choices": {
+        "1": {
+          "text": "فتح الصندوق بجرأة.",
+          "next_event": "warrior_event_5",
+          "consequence": {
+            "xp_change": 150,
+            "gold_change": 200
+          }
+        },
+        "2": {
+          "text": "تجاهل الصندوق والاستمرار.",
+          "next_event": "warrior_event_6",
+          "consequence": {
+            "xp_change": 75
+          }
+        }
+      }
+    },
+    "warrior_event_3": {
+      "description": "لقد هزمت الوحش ولكن تعرضت لإصابة. نقاطك الصحية الآن: 80",
+      "choices": {
+        "1": {
+          "text": "الاستمرار في الرحلة.",
+          "next_event": "warrior_event_7",
+          "consequence": {
+            "xp_change": 100
+          }
+        },
+        "2": {
+          "text": "الراحة والشفاء.",
+          "next_event": "warrior_event_8",
+          "consequence": {
+            "hp_change": 20,
+            "xp_change": 50
+          }
+        }
+      }
+    },
+    "warrior_event_4": {
+      "description": "لقد تجاوزت الوحش بدون مشاكل. نقاطك الصحية الآن: 100",
+      "choices": {
+        "1": {
+          "text": "الاستمرار في الرحلة.",
+          "next_event": "warrior_event_7",
+          "consequence": {
+            "xp_change": 50
+          }
+        },
+        "2": {
+          "text": "التوقف للاستراحة.",
+          "next_event": "warrior_event_8",
+          "consequence": {
+            "xp_change": 25
+          }
+        }
+      }
+    },
+    "warrior_event_5": {
+      "description": "لقد فتحت الصندوق ووجدت الذهب! حصلت على 200 ذهب و150 XP.",
+      "choices": {
+        "1": {
+          "text": "الاستمرار في المغامرة.",
+          "next_event": "warrior_event_7",
+          "consequence": {
+            "xp_change": 150,
+            "gold_change": 200
+          }
+        },
+        "2": {
+          "text": "العودة إلى القرية.",
+          "next_event": "warrior_event_end",
+          "consequence": {
+            "xp_change": 0
+          }
+        }
+      }
+    },
+    "warrior_event_6": {
+      "description": "لقد تجاوزت الصندوق بدون الحصول على شيء. نقاطك الصحية الآن: 100",
+      "choices": {
+        "1": {
+          "text": "الاستمرار في المغامرة.",
+          "next_event": "warrior_event_7",
+          "consequence": {
+            "xp_change": 75
+          }
+        },
+        "2": {
+          "text": "العودة إلى القرية.",
+          "next_event": "warrior_event_end",
+          "consequence": {
+            "xp_change": 0
+          }
+        }
+      }
+    },
+    "warrior_event_7": {
+      "description": "تصل إلى مدخل مغارة مظلمة. ماذا تفعل؟",
+      "choices": {
+        "1": {
+          "text": "دخول المغارة بشجاعة.",
+          "next_event": "warrior_event_9",
+          "consequence": {
+            "xp_change": 100
+          }
+        },
+        "2": {
+          "text": "البحث عن طريق آخر.",
+          "next_event": "warrior_event_10",
+          "consequence": {
+            "xp_change": 50
+          }
+        }
+      }
+    },
+    "warrior_event_8": {
+      "description": "استراحتك ساعدت في استعادة صحتك. نقاطك الصحية الآن: 100",
+      "choices": {
+        "1": {
+          "text": "الاستمرار في الرحلة.",
+          "next_event": "warrior_event_7",
+          "consequence": {
+            "xp_change": 50
+          }
+        },
+        "2": {
+          "text": "العودة إلى القرية.",
+          "next_event": "warrior_event_end",
+          "consequence": {
+            "xp_change": 0
+          }
+        }
+      }
+    },
+    "warrior_event_9": {
+      "description": "داخل المغارة، تواجه وحشًا آخر. ماذا تفعل؟",
+      "choices": {
+        "1": {
+          "text": "مهاجمة الوحش مرة أخرى.",
+          "next_event": "warrior_event_11",
+          "consequence": {
+            "hp_change": -30,
+            "xp_change": 200
+          }
+        },
+        "2": {
+          "text": "استخدام قوة خارقة للهروب.",
+          "next_event": "warrior_event_end",
+          "consequence": {
+            "hp_change": -10,
+            "xp_change": 100
+          }
+        }
+      }
+    },
+    "warrior_event_10": {
+      "description": "وجدت طريقًا آخر يقود إلى كنز آخر. ماذا تفعل؟",
+      "choices": {
+        "1": {
+          "text": "اتباع الطريق الجديد.",
+          "next_event": "warrior_event_12",
+          "consequence": {
+            "xp_change": 150,
+            "gold_change": 300
+          }
+        },
+        "2": {
+          "text": "تجاهل الطريق والاستمرار.",
+          "next_event": "warrior_event_end",
+          "consequence": {
+            "xp_change": 50
+          }
+        }
+      }
+    },
+    "warrior_event_11": {
+      "description": "لقد هزمت الوحش ولكنك تعرضت لإصابة قاتلة. انتهت مغامرتك.",
+      "choices": {}
+    },
+    "warrior_event_12": {
+      "description": "لقد وجدت كنزًا ضخمًا! انتهت مغامرتك بنجاح.",
+      "choices": {}
+    },
+    "warrior_event_end": {
+      "description": "لقد انتهت مغامرتك. يمكنك بدء مغامرة جديدة بكتابة .داندد",
+      "choices": {}
+    },
+    "mage_event_1": {
+      "description": "تواجه تنينًا ناريًا في الطريق. ماذا تفعل؟",
+      "choices": {
+        "1": {
+          "text": "استخدام تعويذة نارية لمهاجمة التنين.",
+          "next_event": "mage_event_3",
+          "consequence": {
+            "hp_change": -15,
+            "xp_change": 120
+          }
+        },
+        "2": {
+          "text": "تجاهل التنين والمرور.",
+          "next_event": "mage_event_4",
+          "consequence": {
+            "xp_change": 60
+          }
+        }
+      }
+    },
+    // يمكن إضافة المزيد من الأحداث لكل فئة (Mage, Rogue) هنا
+    "dynamic_event": {
+      "description": "",
+      "choices": {}
+    }
+  },
+  "npcs": {
+    "npc_1": {
+      "name": "الحكيم العجوز",
+      "description": "رجل حكيم يعيش في الغابة يمكنه تقديم النصائح."
+    },
+    "npc_2": {
+      "name": "التاجر الغامض",
+      "description": "تاجر غامض يقدم لك عناصر قوية مقابل الذهب."
+    }
+  }
+}
